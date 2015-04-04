@@ -1,1 +1,3 @@
-__author__ = 'timothy.fribergholm'
+from reddit.client import Client
+
+client = Client()
