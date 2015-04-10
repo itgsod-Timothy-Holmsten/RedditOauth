@@ -6,7 +6,7 @@ tim = client.login('timsbot')
 
 print tim.link_karma()
 
-tim.submit("test", "self", "Sent from bot", "123 Test")
+tim.submit("timsbot", "self", "A submit", "123 Test")
 
 
 
