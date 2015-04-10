@@ -19,4 +19,14 @@ class Utils(object):
 
         return k
 
+class Logger(object):
+    def __init__(self, text):
+        self.text = text
+
+        # For later we will add so the logger actually creates a log and saves the text
+
+    def show(self):
+        print self.text
+
+
 
