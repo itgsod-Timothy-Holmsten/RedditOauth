@@ -1,5 +1,4 @@
 import keyring
-import getpass
 import requests
 import sys
 import pprint
@@ -18,18 +17,17 @@ class Client():
         # If client id or client secret is 'null' then ask the user for a client id and secret
         if not (self.client_id or self.client_secret):
             client_id = raw_input("Please type your reddit client id: ")
-            client_secret = getpass.getpass("Please type your client secret: ")
+            client_secret = raw_input("Please type your client secret: ")
 
             # Save client id and secret
             self.client_id = keyring.set_password("redditbot", "client_id", client_id)
             self.client_secret = keyring.set_password("redditbot", "client_secret", client_secret)
 
     def login(self, username):
-
         password = keyring.get_password("redditbot", username)
 
         if not password:
-            password = getpass.getpass("Please type your password: ")
+            password = raw_input("Please type your password: ")
 
             keyring.set_password("redditbot", username, password)
 
